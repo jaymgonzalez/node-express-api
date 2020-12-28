@@ -1,0 +1,74 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "slug": "git-essential-training-the-basics",
+      "title": "Git Essential Training: The Basics",
+      "authorId": 12,
+      "category": "Git"
+    },
+    {
+      "id": 2,
+      "slug": "javascript-closures",
+      "title": "JavaScript: Closures",
+      "authorId": 7,
+      "category": "JavaScript"
+    },
+    {
+      "id": 3,
+      "slug": "javascript-scope",
+      "title": "JavaScript: Scope",
+      "authorId": 6,
+      "category": "JavaScript"
+    },
+    {
+      "id": 4,
+      "slug": "javascript-classes",
+      "title": "JavaScript: Classes",
+      "authorId": 6,
+      "category": "JavaScript"
+    },
+    {
+      "id": 5,
+      "slug": "javascript-prototypes",
+      "title": "JavaScript: Prototypes",
+      "authorId": 7,
+      "category": "JavaScript"
+    },
+    {
+      "id": 6,
+      "slug": "learning-javascript-debugging",
+      "title": "Learning JavaScript Debugging",
+      "authorId": 8,
+      "category": "JavaScript"
+    },
+    {
+      "id": 7,
+      "slug": "learning-functional-programming-with-javascript-es5",
+      "title": "Learning Functional Programming with JavaScript (ES5)",
+      "authorId": 9,
+      "category": "JavaScript"
+    },
+    {
+      "id": 8,
+      "slug": "javascript-best-practices-for-data",
+      "title": "JavaScript: Best Practices for Data",
+      "authorId": 7,
+      "category": "JavaScript"
+    },
+    {
+      "id": 9,
+      "slug": "serverless-and-microservices-for-aws",
+      "title": "Serverless and Microservices for AWS",
+      "authorId": 11,
+      "category": "AWS"
+    },
+    {
+      "id": 10,
+      "slug": "building-serverless-apps-on-aws",
+      "title": "Building Serverless Apps on AWS",
+      "authorId": 6,
+      "category": "AWS"
+    }
+  ]
+}
