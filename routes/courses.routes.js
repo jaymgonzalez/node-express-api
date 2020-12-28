@@ -8,6 +8,10 @@ router.route('/api/courses')
   .post(courseCtrl.create)
 
 router.route('/api/courses/:courseId')
-  .get(courseCtrl.courseByID)
+  .get(courseCtrl.courseById)
+  .put(courseCtrl.update)
+
+router.param('courseId', courseCtrl.setUserId)
+
 
 export default router

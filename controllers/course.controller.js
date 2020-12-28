@@ -1,4 +1,5 @@
 import Course from '../models/courses.model.js'
+import extend from 'lodash/extend.js'
 
 const list = async (req, res) => {
   try {
@@ -18,10 +19,22 @@ const list = async (req, res) => {
   }
 }
 
-const courseByID = async (req, res) => {
+const courseById = async (req, res) => {
   try {
-    let courses = await Course.findById(req.params.courseId)
-    res.json(courses)
+    let course = await Course.findById(req.params.courseId)
+    res.json(course)
+  } catch (err) {
+    return res.status(400).json({
+      error: err
+    })
+  }
+}
+
+const setUserId = async (req, res, next, id) => {
+  try {
+    let course = await Course.findById(id)
+    req.profile = course
+    next()
   } catch (err) {
     return res.status(400).json({
       error: err
@@ -43,5 +56,18 @@ const create = async (req, res) => {
   }
 }
 
+const update = async (req, res) => {
+  try {
+    let course = req.profile
+    course = extend(course, req.body)
+    await course.save()
+    res.json(course)
+  } catch (err) {
+    return res.status(400).json({
+      error: err
+    })
+  }
+}
 
-export default { list, courseByID, create }
+
+export default { list, courseById, create, update, setUserId }

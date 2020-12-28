@@ -5,7 +5,7 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 
 const app = express()
-const db = mongoose.connect(process.env.MONGODB_URI)
+const db = mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
 const port = process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({ extended: true }))
