@@ -21,8 +21,7 @@ const list = async (req, res) => {
 
 const courseById = async (req, res) => {
   try {
-    let course = await Course.findById(req.params.courseId)
-    res.json(course)
+    res.json(req.profile)
   } catch (err) {
     return res.status(400).json({
       error: err
@@ -30,7 +29,7 @@ const courseById = async (req, res) => {
   }
 }
 
-const setUserId = async (req, res, next, id) => {
+const setCourseId = async (req, res, next, id) => {
   try {
     let course = await Course.findById(id)
     req.profile = course
@@ -70,4 +69,4 @@ const update = async (req, res) => {
 }
 
 
-export default { list, courseById, create, update, setUserId }
+export default { list, courseById, create, update, setCourseId }

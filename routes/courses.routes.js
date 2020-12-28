@@ -11,7 +11,7 @@ router.route('/api/courses/:courseId')
   .get(courseCtrl.courseById)
   .put(courseCtrl.update)
 
-router.param('courseId', courseCtrl.setUserId)
+router.param('courseId', courseCtrl.setCourseId)
 
 
 export default router
