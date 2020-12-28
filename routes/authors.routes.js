@@ -8,6 +8,10 @@ router.route('/api/authors')
   .post(authorCtrl.create)
 
 router.route('/api/authors/:authorId')
-  .get(authorCtrl.authorByID)
+  .get(authorCtrl.authorById)
+  .put(authorCtrl.update)
+  .delete(authorCtrl.remove)
+
+router.param('authorId', authorCtrl.setAuthorId)
 
 export default router
