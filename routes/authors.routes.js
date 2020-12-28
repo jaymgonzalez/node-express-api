@@ -1,13 +1,9 @@
 import express from 'express'
-
+import authorCtrl from '../controllers/author.controller.js'
 
 const router = express.Router()
 
 router.route('/api/authors')
-  .get((req, res) => {
-    const response = { hello: 'this is my API' }
-
-    res.json(response)
-  })
+  .get(authorCtrl.list)
 
 export default router
