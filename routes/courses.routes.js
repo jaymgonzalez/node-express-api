@@ -10,6 +10,7 @@ router.route('/api/courses')
 router.route('/api/courses/:courseId')
   .get(courseCtrl.courseById)
   .put(courseCtrl.update)
+  .delete(courseCtrl.remove)
 
 router.param('courseId', courseCtrl.setCourseId)
 

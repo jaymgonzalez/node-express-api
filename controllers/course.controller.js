@@ -46,8 +46,9 @@ const create = async (req, res) => {
   try {
     await course.save()
     return res.status(200).json({
-      message: "Course created successfully!"
-    }, course)
+      message: "Course created successfully!",
+      course
+    })
   } catch (err) {
     return res.status(400).json({
       error: err
@@ -68,5 +69,17 @@ const update = async (req, res) => {
   }
 }
 
+const remove = async (req, res) => {
+  try {
+    let course = req.profile
+    let deletedCourse = await course.remove()
+    res.status(204).json(deletedCourse)
+  } catch (err) {
+    return res.status(400).json({
+      error: err
+    })
+  }
+}
 
-export default { list, courseById, create, update, setCourseId }
+
+export default { list, courseById, create, update, setCourseId, remove }
