@@ -1,3 +1,4 @@
+import dotenv from 'dotenv'
 import coursesRoute from './routes/courses.routes.js'
 import authorsRoute from './routes/authors.routes.js'
 import express from 'express'
@@ -5,6 +6,8 @@ import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import helmet from 'helmet'
 import compression from 'compression'
+
+dotenv.config()
 
 const app = express()
 const db = mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -20,7 +23,7 @@ app.use('/', authorsRoute)
 
 
 app.get('/', (req, res) => {
-  res.send('wellcome to my API')
+  res.send('Welcome to my Courses API')
 })
 
 app.listen(port, () => {
