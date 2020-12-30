@@ -7,7 +7,9 @@ const courseModel = new Schema({
   slug: { type: String },
   title: { type: String },
   authorId: { type: Number },
-  category: { type: String }
+  category: { type: String },
+  description: { type: String },
+  finished: { type: Boolean, default: false }
 })
 
 export default mongoose.model('Course', courseModel)
